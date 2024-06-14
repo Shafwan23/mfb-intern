@@ -1,0 +1,62 @@
+import React, { useState } from "react";
+
+const MyComponent = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
+  const toggleLogin = () => setIsLoginOpen(!isLoginOpen);
+
+  return (
+    <div>
+      {/* Nav Menu */}
+      <nav id="nav-menu" className={isMenuOpen ? "show-menu" : ""}>
+        {/* Menu Content */}
+      </nav>
+
+      {/* Nav Toggle */}
+      <button id="nav-toggle" onClick={toggleMenu}>
+        Toggle Menu
+      </button>
+
+      {/* Nav Close */}
+      <button id="nav-close" onClick={toggleMenu}>
+        Close Menu
+      </button>
+
+      {/* Search */}
+      <div id="search" className={isSearchOpen ? "show-search" : ""}>
+        {/* Search Content */}
+      </div>
+
+      {/* Search Button */}
+      <button id="search-btn" onClick={toggleSearch}>
+        Toggle Search
+      </button>
+
+      {/* Search Close */}
+      <button id="search-close" onClick={toggleSearch}>
+        Close Search
+      </button>
+
+      {/* Login */}
+      <div id="login" className={isLoginOpen ? "show-login" : ""}>
+        {/* Login Content */}
+      </div>
+
+      {/* Login Button */}
+      <button id="login-btn" onClick={toggleLogin}>
+        Toggle Login
+      </button>
+
+      {/* Login Close */}
+      <button id="login-close" onClick={toggleLogin}>
+        Close Login
+      </button>
+    </div>
+  );
+};
+
+export default MyComponent;
